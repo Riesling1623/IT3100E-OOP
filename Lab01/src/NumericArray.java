@@ -3,16 +3,16 @@ import java.util.*;
 
 public class NumericArray {
     public static void main(String[] args){
-        int sum = 0;
+        double sum = 0;
         Scanner scan = new Scanner(System.in);
         
         // Input the elements of array
         System.out.print("Enter length of the array: ");
         int lengthArray = scan.nextInt();
-        int[] arr = new int[lengthArray];
+        double[] arr = new double[lengthArray];
         for (int i = 0; i < lengthArray; i++){
             System.out.print("a[" + i + "] = ");
-            arr[i] = scan.nextInt();            
+            arr[i] = scan.nextDouble();            
         }
         scan.close();
 
