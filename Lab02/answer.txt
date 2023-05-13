@@ -1,3 +1,2 @@
 Answer the question in 8:
-Yes, Java does allow you to create multiple constructors for
-a class, including constructors with different parameter list.
+Yes, Java does allow you to create multiple constructors for a class, including constructors with different parameter list.
