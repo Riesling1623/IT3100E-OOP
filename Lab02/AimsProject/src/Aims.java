@@ -15,6 +15,7 @@ public class Aims {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
+        // Remove disc from the cart
         anOrder.removeDigitalVideoDisc(dvd3);
 
         // Print total cosr of the items in the cart
