@@ -15,6 +15,13 @@ public class Aims {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
+        // Create a list of DVD objects and add them to cart
+        DigitalVideoDisc[] dvdList = {
+            new DigitalVideoDisc("Titanic"),
+            new DigitalVideoDisc("The Dark Knight")
+        };
+        anOrder.addDigitalVideoDisc(dvdList);
+
         // Remove disc from the cart
         anOrder.removeDigitalVideoDisc(dvd3);
 
