@@ -24,6 +24,26 @@ public class Cart {
         }
     }
 
+    public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList){
+        int indexBlank = 0;
+        while (itemsOrdered[indexBlank] != null && indexBlank < itemsOrdered.length){
+            indexBlank++;
+        }
+
+        for (DigitalVideoDisc disc : dvdList){
+            if (indexBlank < itemsOrdered.length){
+                itemsOrdered[indexBlank] = disc;
+                System.out.println("The disc has been added.");
+                qtyOrdered++;
+            }
+
+            else {
+                System.out.println("The cart is almost full.");
+                break;
+            }
+        }
+    }
+
     // Remove Disc
     public void removeDigitalVideoDisc(DigitalVideoDisc disc){
         int indexRemove = -1;
