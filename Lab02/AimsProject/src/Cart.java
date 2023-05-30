@@ -93,5 +93,43 @@ public class Cart {
         System.out.println("Total cost: " + totalCost());
         System.out.println("***************************************************");
     }
+
+    public void search(int id){
+        boolean checkId = false;
+        for (DigitalVideoDisc disc : itemsOrdered){
+            if (disc != null){
+                if (id == disc.getId()){
+                    System.out.println(disc.toString()); 
+                    checkId = true;
+                    break;
+                }
+            } else {
+                break;
+            }
+        }
+
+        if (checkId == false){
+            System.out.println("No match is found.");
+        }
+    }
+
+    public void search(String title){
+        boolean checkTitle = false;
+        for (DigitalVideoDisc disc: itemsOrdered){
+            if (disc != null){
+                if (disc.isMatch(title)){
+                    System.out.println(disc.toString());
+                    checkTitle = true;
+                    break;
+                }
+            } else {
+                break;
+            }
+        }
+
+        if (checkTitle == false){
+            System.out.println("No match is found.");
+        }
+    }
     
 }
