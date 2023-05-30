@@ -1,3 +1,4 @@
+package hust.soict.dsai.lab01;
 // Exercise 6.6
 import java.util.*;
 

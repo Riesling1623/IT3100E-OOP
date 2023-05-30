@@ -1,3 +1,4 @@
+package hust.soict.dsai.lab01;
 // Exercise 6.2
 import java.util.Scanner;
 
