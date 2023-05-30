@@ -1,5 +1,0 @@
-Technically, Java is always pass by value, because even though a variable might hold a reference
-to an object, that object reference is a value that represents the object's location in memory. Object
-references are therefore passed by value.
-
-Both reference data types and primitive data types are passed by value.
