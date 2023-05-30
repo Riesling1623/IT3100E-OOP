@@ -79,5 +79,19 @@ public class Cart {
         }
         return sumCost;
     }
+
+    public void print(){
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for (DigitalVideoDisc disc : itemsOrdered){
+            if (disc != null){
+                System.out.println(disc.toString());
+            } else {
+                break;
+            }
+        }
+        System.out.println("Total cost: " + totalCost());
+        System.out.println("***************************************************");
+    }
     
 }
