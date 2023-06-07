@@ -9,17 +9,11 @@ public abstract class Media {
     private static int nbMedia = 0;
 
     public Media(){
-        
+        super();
     }
 
     public Media(String title){
         this.title = title;
-        this.id = ++nbMedia;
-    }
-
-    public Media(String title, String category) {
-        this.title = title;
-        this.category = category;
         this.id = ++nbMedia;
     }
 
