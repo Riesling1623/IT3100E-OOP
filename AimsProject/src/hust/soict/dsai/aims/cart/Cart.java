@@ -10,7 +10,10 @@ public class Cart {
 
     // Add Media
     public void addMedia(Media media){
-        itemsOrdered.add(media);
+        boolean checkExist = itemsOrdered.contains(media);
+        if (!checkExist){
+            itemsOrdered.add(media);
+        }
     }
 
     // Remove Media

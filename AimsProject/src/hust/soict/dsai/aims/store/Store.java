@@ -7,7 +7,10 @@ public class Store {
 
     // Add Media
     public void addMedia(Media media){
-        itemsInStore.add(media);
+        boolean checkExist = itemsInStore.contains(media);
+        if (!checkExist){
+            itemsInStore.add(media);
+        }
     }
 
     // Remove Media
