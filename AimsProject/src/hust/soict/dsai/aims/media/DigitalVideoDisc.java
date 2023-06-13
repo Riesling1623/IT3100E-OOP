@@ -2,6 +2,10 @@ package hust.soict.dsai.aims.media;
 
 public class DigitalVideoDisc extends Disc implements Playable{
 
+    public DigitalVideoDisc(){
+        super();
+    }
+
     public DigitalVideoDisc(String title) {
         super(title);
     }
