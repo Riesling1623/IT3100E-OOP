@@ -11,6 +11,14 @@ public class Book extends Media{
         super();
     }
 
+    public Book(String title){
+        super(title);
+    }
+
+    public Book(String title, String category, float cost){
+        super(title, category, cost);
+    }
+
     // Add author
     public void addAuthor(String authorName){
         boolean checkExist = authors.contains(authorName);
@@ -27,4 +35,7 @@ public class Book extends Media{
         }
     }
     
+    public String toString() {
+        return getId() + ". DVD - " + getTitle() + " - " + getCategory() + ": " + getCost() + " $";
+    }
 }
