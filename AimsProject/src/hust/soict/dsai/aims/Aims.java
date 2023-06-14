@@ -29,6 +29,15 @@ public class Aims {
                 case 2:
                     updateStore(scanner);
                     break;
+                case 3:
+                    viewCurrentCart(scanner);
+                    break;
+                case 0:
+                    System.out.println("Exiting AIMS...");
+                    return;
+                default:
+                    System.out.println("Invalid option. Please choose a number from the menu.");
+                    break;
             }
         }
     }
