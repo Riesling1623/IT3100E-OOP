@@ -31,6 +31,14 @@ public class Track implements Playable{
         System.out.println("Track length: " + this.getLength());
     }
 
+    public String playGUI(){
+        if (this.getLength() > 0){
+            return "<html>Playing track: " + this.getTitle() + "<br>Track length: " + this.getLength() + "</html>";
+        } else {
+            return "Cannot play this track.";
+        }
+    }
+
     @Override
     public boolean equals(Object o){
         if (this == o){

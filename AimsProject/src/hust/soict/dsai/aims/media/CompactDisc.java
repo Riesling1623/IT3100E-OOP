@@ -74,6 +74,14 @@ public class CompactDisc extends Disc implements Playable{
         }
     }
 
+    public String playGUI(){
+        String playCD = "";
+        for (Track track: tracks){
+            playCD += (track.playGUI() + "<br>");
+        }
+        return playCD;
+    }
+
     public String toString() {
         return getId() + ". CD - " + getTitle() + " - " + getCategory() + " - " + getDirector() + " - " + getLength() + " - "  + getArtist() + ": " + getCost() + " $";
     }
