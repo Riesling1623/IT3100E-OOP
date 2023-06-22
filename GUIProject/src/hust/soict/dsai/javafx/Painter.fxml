@@ -2,6 +2,10 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -16,6 +20,20 @@
             <Insets right="8.0" />
          </BorderPane.margin>
          <children>
+            <TitledPane animated="false" maxWidth="1.7976931348623157E308" prefHeight="206.0" prefWidth="44.0" text="Tools">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <RadioButton alignment="TOP_LEFT" layoutX="4.0" layoutY="14.0" mnemonicParsing="false" text="Pen">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="identical" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton layoutX="4.0" layoutY="49.0" mnemonicParsing="false" text="Eraser" toggleGroup="$identical" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearButtonPressed" text="Clear" />
          </children></VBox>
    </left>
