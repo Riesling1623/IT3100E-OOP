@@ -37,7 +37,8 @@ public class DigitalVideoDisc extends Disc implements Playable{
 
     public String playGUI(){
         if (this.getLength() > 0){
-            return "<html>Playing DVD: " + this.getTitle() + "<br>DVD length: " + this.getLength() + "</html>";
+            // return "<html>Playing DVD: " + this.getTitle() + "<br>DVD length: " + this.getLength() + "</html>";
+            return "Playing DVD: " + this.getTitle() + "\n" + "DVD length: " + this.getLength();
         } else {
             return "Cannot play this DVD";
         }

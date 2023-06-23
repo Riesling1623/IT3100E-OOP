@@ -4,11 +4,13 @@ import java.util.Collections;
 import java.util.List;
 
 import hust.soict.dsai.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 public class Cart {
     
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
     // Add Media
     public void addMedia(Media media){
@@ -129,5 +131,9 @@ public class Cart {
 
     public void placeOrder(){
         itemsOrdered.clear();
+    }
+
+    public ObservableList<Media> getItemsOrdered() {
+        return itemsOrdered;
     }
 }
