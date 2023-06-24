@@ -33,7 +33,7 @@ public class Track implements Playable{
 
     public String playGUI(){
         if (this.getLength() > 0){
-            return "<html>Playing track: " + this.getTitle() + "<br>Track length: " + this.getLength() + "</html>";
+            return "Playing track: " + this.getTitle() + " - Track length: " + this.getLength() + "\n";
         } else {
             return "Cannot play this track.";
         }

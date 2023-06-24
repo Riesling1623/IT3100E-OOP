@@ -7,6 +7,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.Box;
@@ -24,6 +26,7 @@ import hust.soict.dsai.aims.media.Book;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
+import hust.soict.dsai.aims.media.Track;
 import hust.soict.dsai.aims.store.Store;
 
 public class StoreScreen extends JFrame {
@@ -61,8 +64,25 @@ public class StoreScreen extends JFrame {
         smUpdateStore.add(new JMenuItem("Add DVD"));
 
         menu.add(smUpdateStore);
-        menu.add(new JMenuItem("View store"));
-        menu.add(new JMenuItem("View cart"));
+        // View store in MenuBar
+        JMenuItem viewStoreMenu = new JMenuItem("View store");
+        viewStoreMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                new StoreScreen(store);
+            }
+        });
+        menu.add(viewStoreMenu);
+
+        // View Cart in MenuBar
+        JMenuItem viewCartMenu = new JMenuItem("View cart");
+        viewCartMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                new CartScreen(cart);
+            }
+        });
+        menu.add(viewCartMenu);
 
         JMenuBar menuBar = new JMenuBar();
         menuBar.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -120,12 +140,16 @@ public class StoreScreen extends JFrame {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("The ShawShank Redemption", "Drama", "Frank Darabont", 142, 9.99f);
         store.addMedia(dvd3);
 
-        CompactDisc cd1 = new CompactDisc("Thriller", "Pop", 9.99f, null, 42, "Michael Jackson");
+        CompactDisc cd1 = new CompactDisc("Thriller", "Pop", 10.99f, "Michael Jackson");
+        Track track1 = new Track("Wanna Be Startin' Somethin'", 7);
+        Track track2 = new Track("Baby Be Mine", 5);
+        Track track3 = new Track("Beat It", 5);
+
+        cd1.addTrack(track1);
+        cd1.addTrack(track2);
+        cd1.addTrack(track3);
         store.addMedia(cd1);
-        CompactDisc cd2 = new CompactDisc("Back in Black", "Rock", 11.99f, null, 43, "AC/DC");
-        store.addMedia(cd2);
-        CompactDisc cd3 = new CompactDisc("21", "Pop", 12.99f, null, 48, "Adele");
-        store.addMedia(cd3);
+
     }
     public static void main(String[] args) {
         initMedia();

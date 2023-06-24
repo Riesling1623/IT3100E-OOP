@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.swing.JFrame;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
@@ -44,10 +43,7 @@ public class CartScreen extends JFrame {
     }
 
     public static void main(String[] args) {
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The God Father", "Crime/Drama", "Francis Ford Coppola", 175, 12.99f);
-        cart.addMedia(dvd1);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("The Dark Knight", "Action/Crime/Drama", "Christopher Nolan", 152, 10.99f);
-        cart.addMedia(dvd2);
+
         new CartScreen(cart);
     }
 }
