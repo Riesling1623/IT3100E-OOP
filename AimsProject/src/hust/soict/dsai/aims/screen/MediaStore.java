@@ -55,7 +55,7 @@ public class MediaStore extends JPanel {
                     dialog.setModal(true);
 
                     Playable playableMedia = (Playable) media;
-                    String mediaInfo = playableMedia.playGUI();
+                    String mediaInfo = "<html>" + playableMedia.playGUI().replace("\n", "<br>") + "</html>";
                     JLabel mediaLabel = new JLabel(mediaInfo);
                     mediaLabel.setVerticalAlignment(JLabel.CENTER);
                     mediaLabel.setHorizontalAlignment(JLabel.CENTER);
