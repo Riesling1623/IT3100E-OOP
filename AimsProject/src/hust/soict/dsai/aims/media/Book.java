@@ -29,9 +29,13 @@ public class Book extends Media{
 
     // Remove author
     public void removeAuthor(String authorName){
-        boolean checkExist = authors.contains(authorName);
-        if (checkExist){
-            authors.remove(authorName);
+        if (authors.size() < 0){
+            System.out.println("There is no author left.");
+        } else {
+            boolean checkExist = authors.contains(authorName);
+            if (checkExist){
+                authors.remove(authorName);
+            }
         }
     }
     

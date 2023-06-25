@@ -20,8 +20,12 @@ public class Disc extends Media{
     }
     public Disc(String title, String category, float cost, String director, int length){
         super(title, category, cost);
-        this.director = director;
-        this.length = length;
+        if (length < 0){
+            System.out.println("Invalid length.");
+        } else {
+            this.director = director;
+            this.length = length;
+        }
     }
 
     // Getters
@@ -33,7 +37,11 @@ public class Disc extends Media{
     }
 
     public void setLength(int length) {
-        this.length = length;
+        if (length < 0){
+            System.out.println("Invalid length.");
+        } else {
+            this.length = length;
+        }
     }
     public void setDirector(String director) {
         this.director = director;

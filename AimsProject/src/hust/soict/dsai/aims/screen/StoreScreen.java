@@ -105,9 +105,9 @@ public class StoreScreen extends JFrame {
             if (menuItemText.equals("Add Book")){
                 new AddBookToStore(store);
             } else if (menuItemText.equals("Add CD")){
-                new AddCD(store);
+                new AddCDToStore(store);
             } else if (menuItemText.equals("Add DVD")){
-                new AddDVD(store);
+                new AddDVDToStore(store);
             }
         }
     }

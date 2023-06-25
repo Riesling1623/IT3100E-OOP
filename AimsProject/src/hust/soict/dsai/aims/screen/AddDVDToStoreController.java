@@ -8,7 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class AddDVDController {
+public class AddDVDToStoreController {
     private Store store;
 
     @FXML
@@ -41,6 +41,20 @@ public class AddDVDController {
         try {
             cost = Float.parseFloat(tfCost.getText());
             length = Integer.parseInt(tfLength.getText());
+
+            if (cost < 0){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Cost must be positive!");
+                alert.setTitle("Invalid Cost");
+                alert.setHeaderText(null);
+                alert.showAndWait();
+                return;
+            } else if (length < 0) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Length must be positive!");
+                alert.setTitle("Invalid Length");
+                alert.setHeaderText(null);
+                alert.showAndWait();
+                return;
+            }
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to parse number!");
             alert.setTitle("Wrong type");
@@ -81,7 +95,7 @@ public class AddDVDController {
         btnSave.setDisable(!checkAllFields);
     }
 
-    public AddDVDController(Store store){
+    public AddDVDToStoreController(Store store){
         super();
         this.store = store;
     }

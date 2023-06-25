@@ -24,10 +24,14 @@ public abstract class Media {
     }
 
     public Media(String title, String category, float cost) {
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
-        this.id = ++nbMedia;
+        if (cost < 0){
+            System.out.println("Invalid cost.");
+        } else {
+            this.title = title;
+            this.category = category;
+            this.cost = cost;
+            this.id = ++nbMedia;
+        }
     }
 
     public int getId() {
@@ -52,7 +56,11 @@ public abstract class Media {
     }
 
     public void setCost(float cost) {
-        this.cost = cost;
+        if (cost < 0){
+            System.out.println("Invalid cost.");
+        } else {
+            this.cost = cost;
+        }
     }
 
     public abstract String toString();

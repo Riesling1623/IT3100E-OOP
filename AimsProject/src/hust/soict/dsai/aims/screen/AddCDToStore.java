@@ -9,17 +9,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-public class AddCD extends JFrame{
+public class AddCDToStore extends JFrame{
     private static Store store;
 
     public static void main(String[] args) {
-        new AddCD(store);
+        new AddCDToStore(store);
     }
 
-    public AddCD(Store store){
+    public AddCDToStore(Store store){
         super();
 
-        AddCD.store = store;
+        AddCDToStore.store = store;
 
         JFXPanel fxPanel = new JFXPanel();
         this.add(fxPanel);
@@ -33,7 +33,7 @@ public class AddCD extends JFrame{
             public void run() {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/dsai/aims/screen/addCD.fxml"));
-                    AddCDController controller = new AddCDController(store);
+                    AddCDToStoreController controller = new AddCDToStoreController(store);
                     loader.setController(controller);
                     Parent root = loader.load();
                     fxPanel.setScene(new Scene(root));

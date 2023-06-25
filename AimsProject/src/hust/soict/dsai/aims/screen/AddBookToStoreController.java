@@ -32,6 +32,13 @@ public class AddBookToStoreController {
         float cost = 0.0f;
         try {
             cost = Float.parseFloat(tfCost.getText());
+            if (cost < 0){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Cost must be positive.");
+                alert.setTitle("Invalid.");
+                alert.setHeaderText(null);
+                alert.showAndWait();
+                return;
+            }
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to parse cost!");
             alert.setTitle("Wrong type");

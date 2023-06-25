@@ -14,8 +14,13 @@ public class Track implements Playable{
         this.title = title;
     }
     public Track(String title, int length) {
-        this.title = title;
-        this.length = length;
+        if (length < 0){
+            System.out.println("Invalid length.");
+        }
+        else {
+            this.title = title;
+            this.length = length;
+        }
     }
     
     // Getters

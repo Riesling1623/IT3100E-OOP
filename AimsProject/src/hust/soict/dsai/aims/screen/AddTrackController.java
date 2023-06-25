@@ -28,6 +28,13 @@ public class AddTrackController {
         int length = 0;
         try {
             length = Integer.parseInt(tfLength.getText());
+            if (length < 0){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Length must be positive!");
+                alert.setTitle("Invalid length.");
+                alert.setHeaderText(null);
+                alert.showAndWait();
+                return;
+            }
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to parse length!");
             alert.setTitle("Wrong type");
