@@ -67,6 +67,7 @@ public class StoreScreen extends JFrame {
         smUpdateStore.add(smAddDVD);
 
         smAddBook.addActionListener(new btnMenuListener());
+        smAddCD.addActionListener(new btnMenuListener());
 
         menu.add(smUpdateStore);
         // View store in MenuBar
@@ -102,6 +103,8 @@ public class StoreScreen extends JFrame {
             String menuItemText = e.getActionCommand();
             if (menuItemText.equals("Add Book")){
                 new AddBookToStore(store);
+            } else if (menuItemText.equals("Add CD")){
+                new AddCD(store);
             }
         }
     }
