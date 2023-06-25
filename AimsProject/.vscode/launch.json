@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AddDVD",
+            "request": "launch",
+            "mainClass": "hust.soict.dsai.aims.screen.AddDVD",
+            "projectName": "AimsProject_1d05d655"
+        },
+        {
+            "type": "java",
             "name": "AddCD",
             "request": "launch",
             "mainClass": "hust.soict.dsai.aims.screen.AddCD",
