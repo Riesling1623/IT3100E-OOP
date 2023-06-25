@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
 
@@ -60,7 +61,12 @@ public class MediaStore extends JPanel {
                     dialog.setModal(true);
 
                     Playable playableMedia = (Playable) media;
-                    String mediaInfo = "<html>" + playableMedia.playGUI().replace("\n", "<br>") + "</html>";
+                    String mediaInfo = "";
+                    try {
+                        mediaInfo = "<html>" + playableMedia.playGUI().replace("\n", "<br>") + "</html>";
+                    } catch (PlayerException e1) {
+                        e1.printStackTrace();
+                    }
                     JLabel mediaLabel = new JLabel(mediaInfo);
                     mediaLabel.setVerticalAlignment(JLabel.CENTER);
                     mediaLabel.setHorizontalAlignment(JLabel.CENTER);
