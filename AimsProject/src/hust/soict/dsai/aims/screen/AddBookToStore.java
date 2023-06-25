@@ -1,28 +1,30 @@
 package hust.soict.dsai.aims.screen;
 
-import java.io.IOException;
-
 import javax.swing.JFrame;
 
-import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.store.Store;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-public class CartScreen extends JFrame {
-    private static Cart cart;
+public class AddBookToStore extends JFrame{
+    private static Store store;
 
-    public CartScreen(Cart cart){
+    public static void main(String[] args) {
+        new AddBookToStore(store);
+    }
+
+    public AddBookToStore(Store store){
         super();
 
-        CartScreen.cart = cart;
+        AddBookToStore.store = store;
 
         JFXPanel fxPanel = new JFXPanel();
         this.add(fxPanel);
 
-        this.setTitle("Cart");
+        this.setTitle("Add Book To Store");
         this.setSize(1024, 768);
         this.setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,20 +32,15 @@ public class CartScreen extends JFrame {
             @Override
             public void run() {
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/dsai/aims/screen/cart.fxml"));
-                    CartScreenController controller = new CartScreenController(cart);
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/dsai/aims/screen/addBookToStore.fxml"));
+                    AddBookToStoreController controller = new AddBookToStoreController(store);
                     loader.setController(controller);
                     Parent root = loader.load();
                     fxPanel.setScene(new Scene(root));
-                } catch (IOException e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
-    }
-
-    public static void main(String[] args) {
-
-        new CartScreen(cart);
     }
 }

@@ -87,8 +87,19 @@ public class CartScreenController {
 
     @FXML
     void placeOrderbtnPressed(ActionEvent event) {
-        cart.placeOrder();
-        costLabel.setText(cart.totalCost() + " $");
+        if (cart.getItemsOrdered().size() == 0){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Your cart is empty.");
+            alert.setTitle("Order created");
+            alert.setHeaderText(null);
+            alert.showAndWait();
+        } else {
+            cart.placeOrder();
+            costLabel.setText(cart.totalCost() + " $");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Successfully Ordered.");
+            alert.setTitle("Order created");
+            alert.setHeaderText(null);
+            alert.showAndWait();
+        }
     }
 
     @FXML
